@@ -1,0 +1,12 @@
+source activate crec 
+
+python web.py 
+
+----------------------------------
+
+curl -X GET -H "X-API-TOKEN: FOOBAR1" -H "Content-Type: application/json; charset=utf-8" http://127.0.0.1:5000/train -d '{"data-url": "sample-data.csv"}'
+
+curl -X POST -H "X-API-TOKEN: FOOBAR1" -H "Content-Type: application/json; charset=utf-8" http://127.0.0.1:5000/predict -d '{"item":18,"num":10}'
+
+[["171", 0.565175367766804], ["172", 0.48930235404068495], ["21", 0.4687114975597589], ["341", 0.4544521382134246], ["20", 0.43365571900429256], ["487", 0.4302834865649568], ["340", 0.41642064736531925], ["488", 0.4161261584222271], ["60", 0.25606958436154376], ["496", 0.25144738196145244]]
+
