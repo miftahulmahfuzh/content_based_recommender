@@ -1,0 +1,4 @@
+/backup
+/heroku
+*.swp
+*.pyc
