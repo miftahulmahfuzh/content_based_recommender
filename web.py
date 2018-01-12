@@ -15,6 +15,12 @@ def token_auth(f):
         return f(*args, **kwargs)
     return decorated_function
 
+@app.route('/export', methods=['POST'])
+@token_auth
+def export():
+    from enginesblob import content_engine
+    content_engine.export()
+    return {"message": "Success!", "success": 2}
 
 @app.route('/predict', methods=['POST'])
 @token_auth

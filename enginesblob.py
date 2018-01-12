@@ -36,6 +36,13 @@ class ContentEngine(object):
             self._r.zadd(self.SIMKEY % row['id'], *similar_items[idx])
 
     def predict(self, item_id, num):
-        return self._r.zrange(self.SIMKEY % item_id, 0, num-1, withscores=True, desc=True) 
+        return self._r.zrange(self.SIMKEY % item_id, 0, num-1, withscores=True, desc=True)
+
+    def export(self):
+        f = open('model.csv','w')
+        f.write('id,similar_articles\n')
+        for idx in range(1,300):    
+            f.write(str(idx) + ',' + ' '.join(self._r.zrange(self.SIMKEY % idx, 0, 22, withscores=False, desc=True)) + '\n')
+        f.close()
 
 content_engine = ContentEngine()
