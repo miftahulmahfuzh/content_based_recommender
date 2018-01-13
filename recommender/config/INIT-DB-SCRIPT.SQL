@@ -1,0 +1,27 @@
+CREATE TABLE sample_user (
+  id       INTEGER NOT NULL AUTO_INCREMENT,
+  username VARCHAR(32) NOT NULL,  
+  email    VARCHAR(40) NOT NULL,  
+  pass     VARCHAR(40) DEFAULT NULL,
+  created_at DATETIME NOT NULL,
+  activation_key VARCHAR(32) DEFAULT NULL,
+  activated TINYINT(1) DEFAULT 0,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB;
+
+CREATE TABLE sample_bulletin (
+  id       INTEGER NOT NULL AUTO_INCREMENT,
+  user_id  INTEGER DEFAULT NULL,
+  username VARCHAR(32) DEFAULT NULL,  
+  title    VARCHAR(32) NOT NULL,  
+  body     VARCHAR(200) NOT NULL,
+  image    VARCHAR(40) DEFAULT NULL, 
+  pass     VARCHAR(40) DEFAULT NULL,
+  is_deleted TINYINT(1) DEFAULT 0,
+  created_at DATETIME NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY fk_usr(user_id)
+  REFERENCES sample_user(id)
+  ON UPDATE CASCADE
+  ON DELETE RESTRICT
+) ENGINE=InnoDB;
