@@ -3,11 +3,10 @@
 <div id="contents">
   <div class="comments">
     <div class="comment">
-      <p>Thank you for membership register.</p>
-      <p>We send confirmation email to you (expired in 24 hours).</p>
-      <p>Please complete registration by clicking the confirmation URL in the email.</p>
+      <p>Terimakasih atas partisipasinya sebagai tester</p>
+      <p>Anda diharuskan untuk login untuk bisa mengakses halaman utama</p>
     </div>
-    <button type="button" onclick="window.location.href='<?php echo get_uri('index.php?page=' . $page) ?>';">BACK TO TOP</button>
+    <button type="button" onclick="window.location.href='<?php echo get_uri('index.php?page=' . $page) ?>';">LOGIN</button>
   </div>
 </div>
 

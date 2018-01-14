@@ -11,20 +11,7 @@ class Storage_Bulletin extends Storage_Project
   const PASSWORD_LENGTH     = 4;
 
   protected $tableName = 'articles';
-  
-  public function insert($data)
-  {
-    if (isset($data['pass'])) {
-      $data['pass'] = hash_password($data['pass']);
-    }
 
-    if (!isset($data['created_at'])) {
-      $data['created_at'] = date('Y-m-d H:i:s');
-    }
-    
-    $this->database->insert($this->tableName, $data);
-  }
-  
   public function validate($data, $forUpdate = false)
   {
     $errors = array();

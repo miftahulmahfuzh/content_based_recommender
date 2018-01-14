@@ -1,4 +1,3 @@
-id,category,content,date,url,title
 1,pendidikan,"
 TRIBUNNEWS.COM, JAKARTA - PKPU Human Initiative mensupport program 13 yayasan yatim berupa program kursus bahasa Inggris bagi anak-anak yatim.
 Program English Corner For Children ini diperuntukan secara gratis bagi anak-anak yatim dhuafa di wilayah Jabodebek.
@@ -315,8 +314,7 @@ Total 353 video reportase dengan kualitas bagus terkumpul dari berbagai daerah d
 Sementara ‎12 video juara favorit, masing-masing mendapatkan Rp 1.000.000 (satu juta rupiah)‎. Total hadiah Rp. 25.000.000 (dua puluh lima juta rupiah).
 
 ","Jumat, 6 Oktober 2017",http://www.tribunnews.com/pendidikan/2017/05/18/berikut-jawara-lomba-video-video-keren-hasil-reportase-pramuka,Berikut Jawara Lomba Video-video Keren Hasil Reportase Pramuka
-24,pendidikan,"
-TRIBUNNNEWS.COM,  JAKARTA - Presiden Joko Widodo selalu menekankan pentingnya pembangunan sumber daya manusia untuk membentuk manusia-manusia Indonesia yang memiliki karakter pribadi unggul, yakni manusia-manusia Indonesia yang memiliki prestasi tinggi dibarengi budi pekerti yang baik.
+24,pendidikan,"TRIBUNNNEWS.COM,  JAKARTA - Presiden Joko Widodo selalu menekankan pentingnya pembangunan sumber daya manusia untuk membentuk manusia-manusia Indonesia yang memiliki karakter pribadi unggul, yakni manusia-manusia Indonesia yang memiliki prestasi tinggi dibarengi budi pekerti yang baik.
 Karakter pribadi unggul ini diperlukan agar Indonesia mampu berkompetisi dengan negara-negara lain dan bahkan memenangkan persaingan global.
 Dalam konteks Indonesia, salah satu komponen dari karakter pribadi unggul adalah karakter kebangsaan dan kebhinnekaan.
 Hal ini penting mengingat identitas bangsa Indonesia yang tersusun dari ribuan suku bangsa dengan beragam budaya, tradisi dan agama.
@@ -437,24 +435,7 @@ Pameran lukisan Komunitas Perupa Jawa Timur (Koperjati). (TRIBUN JATENG/Tribun J
 Dengan adanya pameran R3 ini ""Lukisan Rupaku, Rupamu, Rupa Indonesia"" diharapkan agar masyarakat lebih mengenal tentang warisan budaya Indonesia dan lebih mencintai budaya nusantara bukannya meninggalkan.
 
 ","Jumat, 6 Oktober 2017",http://www.tribunnews.com/pendidikan/2017/05/15/koperjati-pameran-lukisan-rupaku-rupamu-rupa-indonesia,"Koperjati Pameran Lukisan, ""Rupaku, Rupamu, Rupa Indonesia"""
-32,pendidikan,"
-
-/*
-$ = jQuery.noConflict();
-    $(document).ready(function(){    
-$('.txt-article > iframe, .txt-article > * > iframe').each(function() {
-    var currentElement = $(this);
-var h = currentElement.attr(""height"");
-var w = currentElement.attr(""width"");
-currentElement.css(""max-width"",""100%"");
-var nw = parseInt(currentElement.width());
-var nh = (h / w) * nw;
-currentElement.css(""height"",nh+""px"");
-});
-});
-*/
-
-TRIBUNNEWS.COM, JAKARTA - Imam Syafei, anggota Gerakan Pramuka asal Kabupaten Pesawaran, Lampung, mencoba membuktikan penyandang disabilitas bisa berbuat banyak hal.
+32,pendidikan,"TRIBUNNEWS.COM, JAKARTA - Imam Syafei, anggota Gerakan Pramuka asal Kabupaten Pesawaran, Lampung, mencoba membuktikan penyandang disabilitas bisa berbuat banyak hal.
 Lewat puisi Imam ingin membuktikan stigma negatif kebanyakan orang tentang penyandang disabilitas tidak bisa berkreasi ternyata sangat keliru besar.
 Buktinya ia mampu menulis puisi diketahui setelah videonya diunggah oleh akun instagram @pramuka_pesawaran.
 “Kak Imam Syafei sudah menulis 100-an puisi, ia juga sering membacakannya dalam acara-acara kepramukaan”, jelas Destu, Pembina Pramuka di Kwarcab Pesawaran, Lampung, Kamis (11/05/2017).
@@ -3408,24 +3389,7 @@ Jika dihitung secara rupiah, ia merogoh kocek nyaris Rp 150 juta untuk membawa b
 Bongkahan tersebut ia peroleh pada 1990 silam, yakni sesaat setelah Pemerintah Jerman Timur memutuskan untuk merobohkan tembok pemisah itu pada 13 Januari 1990.
 Selain itu, dalam membuat Patung Menembus Batas, Teguh juga menyebut pembuatannya membutuhkan waktu selama 6 bulan.(*)
 ","Jumat, 6 Oktober 2017",http://www.tribunnews.com/metropolitan/2017/09/27/ditemani-dubes-jerman-dan-seniman-gubernur-dki-tinjau-bongkahan-tembok-berlin-di-kalijodo,"Ditemani Dubes Jerman dan Seniman, Gubernur DKI Tinjau Bongkahan Tembok Berlin di Kalijodo"
-258,metropolitan,"
-
-/*
-$ = jQuery.noConflict();
-    $(document).ready(function(){    
-$('.txt-article > iframe, .txt-article > * > iframe').each(function() {
-    var currentElement = $(this);
-var h = currentElement.attr(""height"");
-var w = currentElement.attr(""width"");
-currentElement.css(""max-width"",""100%"");
-var nw = parseInt(currentElement.width());
-var nh = (h / w) * nw;
-currentElement.css(""height"",nh+""px"");
-});
-});
-*/
-
-TRIBUNNEWS.COM, JAKARTA - Pemilik akun media sosial, Jonru Ginting, tidak kapok untuk menulis status pribadi di Facebook mau pun Twitter, meski karena tulisannya itu dia harus menjalani proses hukum.
+258,metropolitan,"TRIBUNNEWS.COM, JAKARTA - Pemilik akun media sosial, Jonru Ginting, tidak kapok untuk menulis status pribadi di Facebook mau pun Twitter, meski karena tulisannya itu dia harus menjalani proses hukum.
 Jonru mendatangi Gedung Direktorat Reserse Kriminal Khusus Polda Metro Jaya untuk menjalani pemeriksaan sebagai saksi.
 Dalam kasus ini, Jonru dilaporkan oleh Muannas Al Aidid karena mengunggah status di media sosial, Facebook dan Twitter.
 Jonru datang didampingi oleh Lembaga Bantuan Hukum Bang Jawara dan Pengacara (Japar) sekitar pukul 15.50 WIB.
@@ -3967,24 +3931,7 @@ Baca: Kisah Korban Salah Tangkap Pasca-Peristiwa G30S/PKI, Diciduk karena Persoa
 Argo melanjutkan selain menghentikan mobil box, anggota juga menghentikan sebuah mobil Xenia bernopol T 1590 DG yang ternyata mengawal mobil box.
 
 ","Jumat, 6 Oktober 2017",http://www.tribunnews.com/metropolitan/2017/10/01/polda-metro-tangkap-pengawal-pengiriman-125-paket-ganja-dalam-keranjang-jeruk-busuk,Polda Metro Tangkap Pengawal Pengiriman 125 Paket Ganja Dalam Keranjang Jeruk Busuk
-299,metropolitan,"
-
-/*
-$ = jQuery.noConflict();
-    $(document).ready(function(){    
-$('.txt-article > iframe, .txt-article > * > iframe').each(function() {
-    var currentElement = $(this);
-var h = currentElement.attr(""height"");
-var w = currentElement.attr(""width"");
-currentElement.css(""max-width"",""100%"");
-var nw = parseInt(currentElement.width());
-var nh = (h / w) * nw;
-currentElement.css(""height"",nh+""px"");
-});
-});
-*/
-
-TRIBUNNEWS.COM, JAKARTA - Ibu kota Jakarta, Minggu (1/10/2017) sore, dilanda hujan deras.
+299,metropolitan,"TRIBUNNEWS.COM, JAKARTA - Ibu kota Jakarta, Minggu (1/10/2017) sore, dilanda hujan deras.
 Selain itu angin kencang dan petir terdengar menggelegar.
 Tak hanya Jakarta, hujan deras juga melanda daerah sekitarnya seperti Bekasi.
 Hujan deras disertai angin kencang menyebabkan pohon tumbang di sejumlah tempat.

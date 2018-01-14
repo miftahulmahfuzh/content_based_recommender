@@ -24,6 +24,11 @@ body {
   width: 100%;
 }
 
+#username {
+  text-align: center;
+  font-weight: bold
+}
+
 #contents {
   width: 72%;
   margin: 0 auto;

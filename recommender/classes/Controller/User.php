@@ -19,22 +19,14 @@ class Controller_User extends Controller_Application
 
     if (isset($submit)) {
       $username = $this->getParam('username');
-      $email    = $this->getParam('email');
       $password = $this->getParam('password');
 
       $data = array(
         'username' => $username,
-        'email'    => $email,
         'pass'     => $password,
       );
          
       $user = new Storage_User();
-
-      $results = $user->fetch(null, 'email = ' . $user->escape($email));
-
-      if (!empty($results) && $results[0]['activated'] === '0' && $this->isExpired($results[0]['created_at'])) {
-        $user->delete($results[0]['id']);
-      }
 
       $errors = $user->validate($data);
     } 
@@ -53,13 +45,11 @@ class Controller_User extends Controller_Application
     $page = (empty($page)) ? 1 : (int)$page;
 
     $username = $this->getParam('username');
-    $email    = $this->getParam('email');
     $password = $this->getParam('password');
 
     $data = array(
       'username' => $username,
-      'email'    => $email,
-      'pass'     => $password,
+      'password' => $password,
     );
          
     $user = new Storage_User();
@@ -73,30 +63,21 @@ class Controller_User extends Controller_Application
     $submit = $this->getParam('submit');
 
     if (isset($submit)) {
-      $results = $user->fetch(null, 'email = ' . $user->escape($email));
+      $results = $user->fetch(null, 'username = ' . $user->escape($username));
 
       if (!empty($results)) {
         $this->err400();
       }
 
-      $key = generate_random_string(16);
-
-      $data['activation_key'] = $key;
-
       $user->insert($data);
 
-      $results = $user->fetch(null, 'email = ' . $user->escape($email));
+      $results = $user->fetch(null, 'username = ' . $user->escape($username));
 
-      if (!empty($results)) {
-        $subject = 'Membership Register';
-        $body    = "Hi " . $username . ",\n"
-                 . "To enable your account please click in the following link (within 24 hours): \n"
-                 . "http://". $this->getEnv('http-host') . BASE_URI_PATH . "/activate.php?key=" . $key . "&id=" . $results[0]['id'];
-
-        send_mail($email, $subject, $body);
-
-        $this->render('user/create.php', get_defined_vars()); 
+      if (empty($results)) {
+        $this->err400();
       }
+
+      $this->render('user/create.php', get_defined_vars()); 
     } else {
       $this->render('user/register.php', get_defined_vars()); 
     }
@@ -161,18 +142,18 @@ class Controller_User extends Controller_Application
     if (isset($submit)) {
       $user = new Storage_User();
 
-      $email    = $this->getParam('email');
+      $username = $this->getParam('username');
       $password = $this->getParam('password');
 
       $data = array(
-        'email' => $email,
-        'pass'  => $password
+        'username' => $username,
+        'password' => $password
       );
 
       $errors = $this->validate($data);
 
       if (empty($errors)) {
-        $result = $user->fetch(null, 'email = ' . $user->escape($email));
+        $result = $user->fetch(null, 'username = ' . $user->escape($username));
         
         $this->session->set('userId', $result[0]['id']);
         $this->session->set('username', $result[0]['username']);
@@ -199,32 +180,28 @@ class Controller_User extends Controller_Application
 
     $errors = array();
 
-    if (array_key_exists('email', $data)) {
-      $_len = (isset($data['email'])) ? strlen($data['email']) : 0;
+    if (array_key_exists('username', $data)) {
+      $_len = (isset($data['username'])) ? strlen($data['username']) : 0;
 
       if ($_len === 0) {
-        $errors[] = 'email is empty';
-      } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors[] = 'invalid email format';
+        $errors[] = 'username is empty';
       }
     }
 
-    if (array_key_exists('pass', $data)) {
-      $_len = (isset($data['pass'])) ? strlen($data['pass']) : 0;
+    if (array_key_exists('password', $data)) {
+      $_len = (isset($data['password'])) ? strlen($data['password']) : 0;
 
       if ($_len === 0) {
         $errors[] = 'password is empty.';
       } elseif ($_len < self::PASSWORD_MIN_LENGTH || $_len > self::PASSWORD_MAX_LENGTH) {
         $errors[] = 'password must be ' . self::PASSWORD_MIN_LENGTH . ' to ' . self::PASSWORD_MAX_LENGTH . ' characters.';
       } else {
-        $condition = 'email = ' . $user->escape($data['email']) . ' && pass = ' . $user->escape(hash_password($data['pass']));
+        $condition = 'username = ' . $user->escape($data['username']) . ' && password = ' . $user->escape($data['password']);
 
         $results = $user->fetch(null, $condition);
 
         if (empty($results)) {
-          $errors[] = 'your email and password do not match';
-        } elseif ($results[0]['activated'] === '0') {
-          $errors[] = 'your email has not activated yet';
+          $errors[] = 'your username and password do not match';
         } 
       }
     }

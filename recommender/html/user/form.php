@@ -10,16 +10,6 @@
         <input type="text" name="username" value="<?php if (isset($username)) echo h($username) ?>" />
       </p>
     </div>
-    <?php if (!isset($isLoginForm)) : ?>
-      <div class="item">
-        <p class="title">
-          E-mail
-        </p>
-        <p class="input">
-          <input type="email" name="email" value="<?php if (isset($email)) echo h($email) ?>" />
-        </p>
-      </div>
-    <?php endif ?>
     <div class="item">
       <p class="title">
         Password

@@ -14,6 +14,12 @@ class Controller_Bulletin extends Controller_Application
 
   public function index()
   {
+    if (!$this->getLoggedInId()) {
+      $this->redirect('login.php', get_defined_vars());
+    }
+
+    $username = $this->session->get('username');
+
     $bulletin = new Storage_Bulletin();
     
     $pager = $this->createPager($bulletin->getCount());
@@ -27,9 +33,7 @@ class Controller_Bulletin extends Controller_Application
     $pager->setCurrentPage($page);
     
     $comments = $bulletin->fetch(
-      null,
-      null,
-      null,
+      null, null, null,
       $pager->getOffset(),
       $pager->getItemsPerPage()
     );

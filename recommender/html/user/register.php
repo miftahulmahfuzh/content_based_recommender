@@ -5,10 +5,7 @@
   <div class="comments">
     <div class="comment">
       <div class="title">
-        <?php echo 'Name : ' . h($username) ?>
-      </div>
-      <div class="title">
-        <?php echo 'Email : ' . h($email) ?>
+        <?php echo 'Username : ' . h($username) ?>
       </div>
       <div class="title">
         <?php echo 'Password : ' . h($password) ?>
@@ -18,7 +15,6 @@
   <div class="confirmForm">
     <form class="default" action="<?php echo get_uri('create.php') ?>" method="post">
       <input type="hidden" name="username" value="<?php echo h($username) ?>" />
-      <input type="hidden" name="email" value="<?php echo h($email) ?>" />
       <input type="hidden" name="password" value="<?php echo h($password) ?>" />
       <input type="submit" name="submit" value="SUBMIT">
       <input type="submit" value="BACK">

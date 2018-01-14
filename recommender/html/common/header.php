@@ -10,3 +10,9 @@
     <div id="header">
       <h1><input type="button" value="News Recommender System" onclick="window.location.href='<?php echo get_uri('index.php') ?>';"></h1>
     </div>
+    <?php if ($this->session->get('username')): ?>
+    <div id="username">
+      Tester : <?php echo $this->session->get('username') ?>
+      <input type="button" value="Logout" onclick="window.location.href='<?php echo get_uri('logout.php') ?>';">
+    </div>
+    <?php endif ?>
