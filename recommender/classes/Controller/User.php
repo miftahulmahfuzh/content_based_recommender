@@ -44,15 +44,29 @@ class Controller_User extends Controller_Application
 
     $page = (empty($page)) ? 1 : (int)$page;
 
-    $username = $this->getParam('username');
-    $password = $this->getParam('password');
+    $username  = $this->getParam('username');
+    $password  = $this->getParam('password');
+    $bisnis    = $this->getParam('bisnis');
+    $olahraga  = $this->getParam('olahraga');
+    $selebriti = $this->getParam('selebriti');
+    $otomotif  = $this->getParam('otomotif');
+    $teknologi = $this->getParam('teknologi');
 
     $data = array(
       'username' => $username,
       'password' => $password,
     );
+
+    $dataPreference = array(
+      'bisnis'    => $bisnis,
+      'olahraga'  => $olahraga,
+      'selebriti' => $selebriti,
+      'otomotif'  => $otomotif,
+      'teknologi' => $teknologi,
+    );
          
     $user = new Storage_User();
+    $preference = new Storage_Preference();
 
     $errors = $user->validate($data);
 
@@ -70,6 +84,7 @@ class Controller_User extends Controller_Application
       }
 
       $user->insert($data);
+      $preference->insert($dataPreference);
 
       $results = $user->fetch(null, 'username = ' . $user->escape($username));
 

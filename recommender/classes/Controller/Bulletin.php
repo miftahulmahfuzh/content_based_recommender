@@ -45,8 +45,13 @@ class Controller_Bulletin extends Controller_Application
   {
     $bulletin = new Storage_Bulletin();
     $model = new Storage_Model();
-
+    
+    $page = $this->getParam('page');
     $id = $this->getParam('id');
+
+    if (empty($page)) {
+      $page = 0;
+    }
 
     if (empty($id)) {
       $this->err404();

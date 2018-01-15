@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bulletin Board System</title>
+    <title>News Recommender System</title>
     <link type="text/css" rel="stylesheet" href="<?php echo get_uri('css/reset.css') ?>" />
     <link type="text/css" rel="stylesheet" href="<?php echo get_uri('css/default.css') ?>" />
   </head>

@@ -18,7 +18,20 @@
         <input type="button" value='source : <?php echo h(substr($article[0]['url'],0,37))."..." ?>' onclick="window.location.href='<?php echo h($article[0]['url']) ?>';">
       </div>
     </div>
-  </div>
+    <div class="confirmForm">
+      <?php if ($this->getLoggedInId()) : ?>
+        <div id="rate">Apakah anda menyukai artikel ini?</div>
+        <form class="default" action="<?php echo get_uri('delete.php') ?>" method="post">
+          <input type="hidden" name="id" value="<?php echo $article[0]['id'] ?>" />
+          <input type="hidden" name="page" value="<?php echo $page ?>" />
+          <div class="submit">
+            <input type="submit" value="YA" />
+            <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('index.php').'?page='.$page ?>';">
+          </div>
+        </form>
+      <?php endif ?>
+    </div>
+  </div> 
 
   <div id="contents">
     <?php if ($others) : ?>
@@ -39,42 +52,7 @@
         </div>
       <?php endforeach ?>
     <?php endif ?>
-  </div>
-
-  <div class="confirmForm">
-    <?php if (!empty($comment['pass']) || $this->getLoggedInId()) : ?>
-      <form class="default" action="<?php echo get_uri('delete.php') ?>" method="post">
-        <input type="hidden" name="comment_id" value="<?php echo $comment['id'] ?>" />
-        <input type="hidden" name="page" value="<?php echo $page ?>" />
-        <input type="hidden" name="pass" value="<?php echo $pass ?>" />
-        <?php if (empty($errors)) : ?>
-          <div class="message">
-            Are you sure ?
-          </div>
-          <div class="submit"> 
-            <input type="hidden" name="do_delete" value="1" />
-            <input type="submit" value="DELETE" />
-            <input type="button" value="CANCEL" onclick="window.location.href='<?php echo get_uri('index.php') ?>?page=<?php echo $page ?>';">
-          </div>
-        <?php else : ?>
-          <div class="submit">
-            <input type="password" name="pass" value="<?php echo $pass ?>" />
-            <input type="submit" value="DELETE" />
-          </div>
-        <?php endif ?>
-      </form>
-    <?php else : ?>
-      <form class="default" action="<?php echo get_uri('index.php') ?>" method="get">
-        <div class="message">
-          This comment can't be deleted.
-        </div>
-        <div class="submit">
-          <input type="hidden" name="page" value="<?php echo $page ?>" />
-          <input type="submit" value="BACK">
-        </div>
-      </form>
-    <?php endif ?>
-  </div>
+  </div> 
 </div>
 
 <?php include(HTML_FILES_DIR . '/common/footer.php') ?>
