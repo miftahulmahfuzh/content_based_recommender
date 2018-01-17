@@ -481,3 +481,62 @@
 [2018/01/15 11:48:12] E_NOTICE ::1 /recommender/article.php?id=193 Undefined variable: page file: /opt/lampp/htdocs/recommender/html/bulletin/article.php line: 29
 [2018/01/15 11:48:42] E_NOTICE ::1 /recommender/article.php?id=193 Undefined variable: page file: /opt/lampp/htdocs/recommender/html/bulletin/article.php line: 26
 [2018/01/15 11:48:42] E_NOTICE ::1 /recommender/article.php?id=193 Undefined variable: page file: /opt/lampp/htdocs/recommender/html/bulletin/article.php line: 29
+[2018/01/15 14:49:41] E_NOTICE ::1 /recommender/create.php Array to string conversion file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 86
+[2018/01/15 14:53:20] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 14:56:36] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 14:56:56] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 14:58:03] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:02:34] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:04:48] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:05:32] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:07:06] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:07:21] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:07:42] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:08:20] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:18:27] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:23:01] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:23:15] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/15 15:23:29] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 10:38:03] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 10:38:55] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:09:21] E_NOTICE ::1 /recommender/create.php Array to string conversion file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 72
+[2018/01/16 11:09:21] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:10:00] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:10:12] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:11:23] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:11:46] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:11:48] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:12:01] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:12:06] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:12:59] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 11:13:13] E_WARNING ::1 /recommender/create.php 400 Bad Request 
+[2018/01/16 12:50:32] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: comments file: /opt/lampp/htdocs/recommender/html/bulletin/index.php line: 12
+[2018/01/16 12:54:59] E_WARNING ::1 /recommender/index.php?page=1 array_keys() expects parameter 1 to be array, boolean given file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 41
+[2018/01/16 12:54:59] E_WARNING ::1 /recommender/index.php?page=1 implode(): Invalid arguments passed file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 41
+[2018/01/17 12:21:43] E_NOTICE ::1 /recommender/article.php?userid=1&page=1&category=metropolitan 404 Not Found 
+[2018/01/17 23:10:43] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/17 23:20:29] E_NOTICE ::1 /recommender/logout.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:20:29] E_NOTICE ::1 /recommender/logout.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:20:29] E_NOTICE ::1 /recommender/logout.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:20:29] E_NOTICE ::1 /recommender/logout.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:20:29] E_NOTICE ::1 /recommender/logout.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Array to string conversion file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 197
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:22:38] E_NOTICE ::1 /recommender/logout.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:23:02] E_NOTICE ::1 /recommender/logout.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:23:02] E_NOTICE ::1 /recommender/logout.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:23:02] E_NOTICE ::1 /recommender/logout.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:23:02] E_NOTICE ::1 /recommender/logout.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:23:02] E_NOTICE ::1 /recommender/logout.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 201
+[2018/01/17 23:25:40] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/17 23:25:45] E_NOTICE ::1 /recommender/logout.php Use of undefined constant categories - assumed 'categories' file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:25:45] E_NOTICE ::1 /recommender/logout.php Use of undefined constant categories - assumed 'categories' file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:25:45] E_NOTICE ::1 /recommender/logout.php Use of undefined constant categories - assumed 'categories' file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:25:45] E_NOTICE ::1 /recommender/logout.php Use of undefined constant categories - assumed 'categories' file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:25:45] E_NOTICE ::1 /recommender/logout.php Use of undefined constant categories - assumed 'categories' file: /opt/lampp/htdocs/recommender/classes/Controller/User.php line: 200
+[2018/01/17 23:30:22] E_ERROR ::1 /recommender/logout.php 500 Internal Server Error Storage_Database_MySQL::update() data is empty.
+[2018/01/17 23:32:29] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/17 23:32:34] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118

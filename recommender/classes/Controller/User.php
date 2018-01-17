@@ -23,7 +23,7 @@ class Controller_User extends Controller_Application
 
       $data = array(
         'username' => $username,
-        'pass'     => $password,
+        'password' => $password,
       );
          
       $user = new Storage_User();
@@ -58,11 +58,11 @@ class Controller_User extends Controller_Application
     );
 
     $dataPreference = array(
-      'bisnis'    => $bisnis,
-      'olahraga'  => $olahraga,
-      'selebriti' => $selebriti,
-      'otomotif'  => $otomotif,
-      'teknologi' => $teknologi,
+      'bisnis'    => floatval($bisnis),
+      'olahraga'  => floatval($olahraga),
+      'selebriti' => floatval($selebriti),
+      'otomotif'  => floatval($otomotif),
+      'teknologi' => floatval($teknologi),
     );
          
     $user = new Storage_User();
@@ -184,6 +184,29 @@ class Controller_User extends Controller_Application
 
   public function logout()
   {
+    $userid = $this->getLoggedInId();
+    $preference = new Storage_Preference();
+    $dataPrefs = $preference->fetch(null, 'id = '.$userid);
+
+    if (empty($dataPrefs)) {
+      $this->err404();
+    }
+
+    unset($dataPrefs[0]['id']);
+    $categories = $this->session->get('categories');
+    $dataPref = array();
+
+    foreach ($dataPrefs[0] as $key => $val) {
+      if (!empty($categories[$key])) {
+        $val += $categories[$key] / array_sum($categories);
+        $dataPref[$key] = $val;
+      } 
+    }
+
+    if (!empty($dataPref)) {
+      $preference->update($userid, $dataPref);
+    }
+
     $this->session->stop();
 
     $this->redirect('index.php');

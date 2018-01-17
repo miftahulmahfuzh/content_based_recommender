@@ -190,6 +190,12 @@ div.comment div.date {
   margin-bottom: 14px;
 }
 
+div.comment div.category {
+  text-align: left;
+  font-weight: bold;
+  margin: 9px auto 0;
+}
+
 div.pager {
   text-align: center;
   width: 600px;

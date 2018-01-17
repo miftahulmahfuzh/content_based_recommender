@@ -16,11 +16,11 @@
     <form class="default" action="<?php echo get_uri('create.php') ?>" method="post">
       <div class="comment">
         <div id="r1">Tolong isi preferensi topik berita anda</div>
-        <div class="preference">Bisnis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  : 0&nbsp&nbsp<input type="range" name="bisnis" min=0 max=5>&nbsp&nbsp5</div>
-        <div class="preference">Olahraga &nbsp : 0&nbsp&nbsp<input type="range" name="olahraga" min=0 max=5>&nbsp&nbsp5</div>
-        <div class="preference">Selebriti&nbsp&nbsp&nbsp : 0&nbsp&nbsp<input type="range" name="selebriti" min=0 max=5>&nbsp&nbsp5</div>
-        <div class="preference">Otomotif &nbsp : 0&nbsp&nbsp<input type="range" name="otomotif" min=0 max=5>&nbsp&nbsp5</div>
-        <div class="preference">Teknologi : 0&nbsp&nbsp<input type="range" name="teknologi" min=0 max=5>&nbsp&nbsp5</div>
+        <div class="preference">Bisnis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  : 1&nbsp&nbsp<input type="range" name="bisnis" min=1 max=5>&nbsp&nbsp5</div>
+        <div class="preference">Olahraga &nbsp : 1&nbsp&nbsp<input type="range" name="olahraga" min=1 max=5>&nbsp&nbsp5</div>
+        <div class="preference">Selebriti&nbsp&nbsp&nbsp : 1&nbsp&nbsp<input type="range" name="selebriti" min=1 max=5>&nbsp&nbsp5</div>
+        <div class="preference">Otomotif &nbsp : 1&nbsp&nbsp<input type="range" name="otomotif" min=1 max=5>&nbsp&nbsp5</div>
+        <div class="preference">Teknologi : 1&nbsp&nbsp<input type="range" name="teknologi" min=1 max=5>&nbsp&nbsp5</div>
       </div>
       <input type="hidden" name="username" value="<?php echo h($username) ?>" />
       <input type="hidden" name="password" value="<?php echo h($password) ?>" />

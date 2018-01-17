@@ -16,6 +16,9 @@ function submit_action_form(action, form_id) {
         <div class="title">
           <input type="button" value='<?php echo h($comment['title']) ?>' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$pager->getCurrentPage().'&id='.$comment['id'] ?>';">
         </div>
+        <div class="category">
+          <?php echo "Category : ".h($comment['category'])?>
+        </div>
         <div class="body">
           <?php echo nl2br(h(substr($comment['content'],0,150))."...") ?>
         </div>

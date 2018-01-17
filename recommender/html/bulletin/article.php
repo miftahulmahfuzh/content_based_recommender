@@ -18,19 +18,24 @@
         <input type="button" value='source : <?php echo h(substr($article[0]['url'],0,37))."..." ?>' onclick="window.location.href='<?php echo h($article[0]['url']) ?>';">
       </div>
     </div>
-    <div class="confirmForm">
-      <?php if ($this->getLoggedInId()) : ?>
-        <div id="rate">Apakah anda menyukai artikel ini?</div>
-        <form class="default" action="<?php echo get_uri('delete.php') ?>" method="post">
-          <input type="hidden" name="id" value="<?php echo $article[0]['id'] ?>" />
-          <input type="hidden" name="page" value="<?php echo $page ?>" />
-          <div class="submit">
-            <input type="submit" value="YA" />
-            <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('index.php').'?page='.$page ?>';">
-          </div>
-        </form>
-      <?php endif ?>
-    </div>
+    <?php if ($isliked) : ?>
+      <div id="r1"> Anda menyukai artikel ini </div>
+    <?php else : ?>
+      <div class="confirmForm">
+        <?php if ($this->getLoggedInId()) : ?>
+          <div id="rate">Apakah anda menyukai artikel ini?</div>
+          <form class="default" action="<?php echo get_uri('rate.php') ?>" method="post">
+            <input type="hidden" name="id" value="<?php echo $article[0]['id'] ?>" />
+            <input type="hidden" name="category" value="<?php echo $article[0]['category'] ?>" />
+            <input type="hidden" name="page" value="<?php echo $page ?>" />
+            <div class="submit">
+              <input type="submit" value="YA" />
+              <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('index.php').'?page='.$page ?>';">
+            </div>
+          </form>
+        <?php endif ?>
+      </div>
+    <?php endif ?>
   </div> 
 
   <div id="contents">
