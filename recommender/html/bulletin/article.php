@@ -24,13 +24,14 @@
       <div class="confirmForm">
         <?php if ($this->getLoggedInId()) : ?>
           <div id="rate">Apakah anda menyukai artikel ini?</div>
-          <form class="default" action="<?php echo get_uri('rate.php') ?>" method="post">
+          <form class="default" action="<?php echo get_uri('like.php') ?>" method="post">
+            <input type="hidden" name="page" value="<?php echo $page ?>" />
+            <input type="hidden" name="alg" value="<?php echo $alg ?>" />
             <input type="hidden" name="id" value="<?php echo $article[0]['id'] ?>" />
             <input type="hidden" name="category" value="<?php echo $article[0]['category'] ?>" />
-            <input type="hidden" name="page" value="<?php echo $page ?>" />
             <div class="submit">
               <input type="submit" value="YA" />
-              <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('index.php').'?page='.$page ?>';">
+              <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('dislike.php').'?page='.$page.'&id='.$article[0]['id'].'&alg='.$alg?>';">
             </div>
           </form>
         <?php endif ?>
@@ -39,14 +40,18 @@
   </div> 
 
   <div id="contents">
+    <div class="comment">
+    <div id="r3">Pilihan algoritma rekomendasi artikel</div>
+    <input type="button" value='Jaccard' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$page.'&id='.$article[0]['id'].'&alg=1'?>';">
+    <input type="button" value='Euclidean' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$page.'&id='.$article[0]['id'].'&alg=2'?>';">
+    <input type="button" value='Cosine' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$page.'&id='.$article[0]['id'].'&alg=3'?>';">
+    </div>
     <?php if ($others) : ?>
-      <div class="title">
-      <h2>Artikel lain yang serupa</h2>
-      </div>
+      <div class="title"> <h2>Artikel lain yang serupa</h2> </div>
       <?php foreach ($others as $other) : ?>
         <div class="comment">
           <div class="title">
-            <input type="button" value='<?php echo h($other['title']) ?>' onclick="window.location.href='<?php echo get_uri('article.php').'?id='.$other['id'] ?>';">
+            <input type="button" value='<?php echo h($other['title']) ?>' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$page.'&id='.$other['id'].'&alg='.$alg ?>';">
           </div>
           <div class="body">
             <?php echo nl2br(h(substr($other['content'],0,150))."...") ?>

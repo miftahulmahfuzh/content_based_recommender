@@ -15,7 +15,8 @@
   <div class="confirmForm">
     <form class="default" action="<?php echo get_uri('create.php') ?>" method="post">
       <div class="comment">
-        <div id="r1">Tolong isi preferensi topik berita anda</div>
+        <div id="r1">Isi preferensi topik berita anda</div>
+        <div id="r1">1 = Kurang suka -- 5 = Sangat suka</div>
         <div class="preference">Bisnis&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  : 1&nbsp&nbsp<input type="range" name="bisnis" min=1 max=5>&nbsp&nbsp5</div>
         <div class="preference">Olahraga &nbsp : 1&nbsp&nbsp<input type="range" name="olahraga" min=1 max=5>&nbsp&nbsp5</div>
         <div class="preference">Selebriti&nbsp&nbsp&nbsp : 1&nbsp&nbsp<input type="range" name="selebriti" min=1 max=5>&nbsp&nbsp5</div>

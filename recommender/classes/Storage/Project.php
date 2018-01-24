@@ -4,7 +4,7 @@ class Storage_Project extends Storage_Base
 {
   public function update($id, $data)
   { 
-    $condition = 'id = ' . $this->escape($id);
+    $condition = 'id='.$id;
     $this->database->update($this->tableName, $data, $condition);
   }
 

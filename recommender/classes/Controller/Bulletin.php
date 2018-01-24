@@ -17,7 +17,7 @@ class Controller_Bulletin extends Controller_Application
     $userid = $this->getLoggedInId();
 
     if (!$userid) {
-      $this->redirect('login.php', get_defined_vars());
+      $this->redirect('login.php');
     }
 
     $bulletin = new Storage_Bulletin();
@@ -61,10 +61,10 @@ class Controller_Bulletin extends Controller_Application
   public function article()
   {
     $bulletin = new Storage_Bulletin();
-    $model = new Storage_Model();
     
     $page = $this->getParam('page');
     $id = $this->getParam('id');
+    $alg = $this->getParam('alg');
 
     if (empty($page)) {
       $page = 0;
@@ -73,6 +73,12 @@ class Controller_Bulletin extends Controller_Application
     if (empty($id)) {
       $this->err404();
     }
+
+    if (empty($alg)) {
+      $alg = 3;
+    }
+
+    $model = new Storage_Model($alg);
 
     $article = $bulletin->fetch(null, 'id = ' . $bulletin->escape($id)); 
     $similar = $model->fetch(null, 'id = ' . $model->escape($id));
@@ -97,7 +103,7 @@ class Controller_Bulletin extends Controller_Application
     $this->render('bulletin/article.php', get_defined_vars());
   }
 
-  public function rate()
+  public function like()
   {
     if (empty($this->getLoggedInId())) {
       $this->err400();
@@ -106,34 +112,96 @@ class Controller_Bulletin extends Controller_Application
     $page = $this->getParam('page');
     $id = $this->getParam('id');
 
+    if (empty($id)) {
+      $this->err404();
+    }
+
     if (empty($page)) {
       $page = 0;
     }
 
     $category = $this->getParam('category');
-    $isliked = false;
     $session = $this->session->get('categories');
+    $isliked = false;
 
     if (!empty($category)) {
+      # count all liked category for re-weighting preference 
       $session[$category]++;
       $this->session->set('categories', $session);
-      $liked = $this->session->get('liked');
 
-      if (empty($liked)) {
-        $liked = array($id);
+      # save article id so it won't be showed anymore during session
+      $sessionLiked = $this->session->get('liked');
+
+      if (empty($sessionLiked)) {
+        $sessionLiked = array($id);
       } else {
-        $liked[] = $id;
+        $sessionLiked[] = $id;
       }
 
-      $this->session->set('liked', $liked);
+      $this->session->set('liked', $sessionLiked);
+      unset($sessionLiked); 
+
+      # set isliked to TRUE so "do you like it?" question won't be showed anymore
       $isliked = true;
-      unset($liked); 
     }
 
     unset($category);
     unset($session);
 
+    $alg = $this->getParam('alg');
+
+    if (!empty($alg)) {
+      $accuration = new Storage_Accuration();
+
+      $liked = $accuration->fetch(null, 'id=' . $alg);
+      if (!empty($liked)) {
+        $accuration->update($alg, array("`like`" => intval($liked[0]['like'])+1));
+      }
+
+      unset($liked);
+    }
+
     $this->redirect('article.php', get_defined_vars());
+  }
+
+  public function dislike()
+  {
+    if (empty($this->getLoggedInId())) {
+      $this->err400();
+    }
+
+    $page = $this->getParam('page');
+    $id = $this->getParam('id');
+    $alg = $this->getParam('alg');
+
+    if (empty($id)) {
+      $this->err404();
+    }
+
+    if (empty($page)) {
+      $page = 0;
+    }
+
+    $sessionDisliked = $this->session->get('disliked');
+
+    if (empty($sessionUnliked)) {
+      $sessionDisliked = array($id);
+    } else {
+      $sessionDisliked[] = $id;
+    }
+
+    $this->session->set('disliked', $sessionDisliked);
+  
+    if (!empty($alg)) {
+      $accuration = new Storage_Accuration($alg);
+
+      $disliked = $accuration->fetch(null, 'id=' . $alg);
+      if (!empty($disliked)) {
+        $accuration->update($alg, array("`dislike`" => intval($disliked[0]['dislike'])+1));
+      }
+    }
+
+    $this->redirect('index.php');
   }
 
   protected function createPager($itemsCount)
@@ -147,10 +215,5 @@ class Controller_Bulletin extends Controller_Application
     $pager->setUri($this->getEnv('Request-Uri'));
 
     return $pager;
-  }
-
-  protected function createImageUploader()
-  {
-    return new Uploader_Image($this->imageDir);
   }
 }

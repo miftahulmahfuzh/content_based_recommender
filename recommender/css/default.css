@@ -40,6 +40,11 @@ body {
   margin: 0 auto;
 }
 
+#r3 {
+  font-weight: bold;
+  padding-bottom: 7px
+}
+
 #footer {
   color: #fff;
   font-size: 108%;

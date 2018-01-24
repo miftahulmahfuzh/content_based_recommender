@@ -540,3 +540,40 @@
 [2018/01/17 23:30:22] E_ERROR ::1 /recommender/logout.php 500 Internal Server Error Storage_Database_MySQL::update() data is empty.
 [2018/01/17 23:32:29] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
 [2018/01/17 23:32:34] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/18 14:06:13] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/18 14:06:20] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/18 14:09:43] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/18 14:49:36] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 118
+[2018/01/23 10:21:21] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 10:30:58] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 10:44:47] E_WARNING ::1 /recommender/rate.php Invalid argument supplied for foreach() file: /opt/lampp/htdocs/recommender/lib/Storage/Database/MySQL.php line: 103
+[2018/01/23 10:48:09] E_WARNING ::1 /recommender/rate.php Invalid argument supplied for foreach() file: /opt/lampp/htdocs/recommender/lib/Storage/Database/MySQL.php line: 103
+[2018/01/23 10:49:36] E_WARNING ::1 /recommender/rate.php Invalid argument supplied for foreach() file: /opt/lampp/htdocs/recommender/lib/Storage/Database/MySQL.php line: 103
+[2018/01/23 10:50:39] E_WARNING ::1 /recommender/rate.php Invalid argument supplied for foreach() file: /opt/lampp/htdocs/recommender/lib/Storage/Database/MySQL.php line: 103
+[2018/01/23 10:51:09] E_WARNING ::1 /recommender/rate.php Invalid argument supplied for foreach() file: /opt/lampp/htdocs/recommender/lib/Storage/Database/MySQL.php line: 103
+[2018/01/23 11:03:50] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 11:05:36] E_NOTICE ::1 /recommender/rate.php Undefined index: metropolitan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 11:09:37] E_NOTICE ::1 /recommender/rate.php Undefined index: pendidikan file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 11:31:06] E_ERROR ::1 /recommender/like.php 500 Internal Server Error Controller_Base::execute() Action not found. 'rate'
+[2018/01/23 21:24:02] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:30] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:30] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:31] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:31] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:31] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:31] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:32] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:33] E_NOTICE ::1 /recommender/article.php?page=1&id=305 404 Not Found 
+[2018/01/23 21:24:39] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:26:16] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:26:51] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:26:59] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:27:00] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:27:09] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:29:06] E_NOTICE ::1 /recommender/article.php?page=1&id=310 404 Not Found 
+[2018/01/23 21:38:56] E_NOTICE ::1 /recommender/like.php Undefined index: seleb file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 21:39:08] E_NOTICE ::1 /recommender/like.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 21:39:14] E_NOTICE ::1 /recommender/like.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/23 21:39:25] E_NOTICE ::1 /recommender/like.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/24 07:09:55] E_NOTICE ::1 /recommender/like.php Undefined index: seleb file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/01/24 09:45:46] E_NOTICE ::1 /recommender/like.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129

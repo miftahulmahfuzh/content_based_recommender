@@ -184,8 +184,9 @@ class Controller_User extends Controller_Application
 
   public function logout()
   {
-    $userid = $this->getLoggedInId();
     $preference = new Storage_Preference();
+
+    $userid = $this->getLoggedInId();
     $dataPrefs = $preference->fetch(null, 'id = '.$userid);
 
     if (empty($dataPrefs)) {
@@ -193,6 +194,7 @@ class Controller_User extends Controller_Application
     }
 
     unset($dataPrefs[0]['id']);
+
     $categories = $this->session->get('categories');
     $dataPref = array();
 
