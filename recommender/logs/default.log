@@ -577,3 +577,35 @@
 [2018/01/23 21:39:25] E_NOTICE ::1 /recommender/like.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
 [2018/01/24 07:09:55] E_NOTICE ::1 /recommender/like.php Undefined index: seleb file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
 [2018/01/24 09:45:46] E_NOTICE ::1 /recommender/like.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 129
+[2018/02/23 07:16:04] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 61
+[2018/02/23 07:19:00] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 66
+[2018/02/23 07:19:00] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 66
+[2018/02/23 07:19:00] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 66
+[2018/02/23 07:19:00] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 66
+[2018/02/23 07:19:00] E_NOTICE ::1 /recommender/index.php?page=1 Undefined variable: PrefsA file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 66
+[2018/02/23 07:20:50] E_NOTICE ::1 /recommender/article.php?page=1&id=0 404 Not Found 
+[2018/02/23 07:40:33] E_NOTICE ::1 /recommender/like.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 142
+[2018/02/23 07:41:02] E_NOTICE ::1 /recommender/like.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 142
+[2018/02/23 08:35:15] E_NOTICE ::1 /recommender/like.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 168
+[2018/02/25 17:52:01] E_NOTICE ::1 /recommender/like.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 168
+[2018/02/25 17:52:05] E_NOTICE ::1 /recommender/like.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 168
+[2018/02/25 17:52:16] E_NOTICE ::1 /recommender/like.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 168
+[2018/02/25 18:06:08] E_NOTICE ::1 /recommender/article.php?page=1&id=0 404 Not Found 
+[2018/02/25 21:06:26] E_NOTICE ::1 /recommender/dislike.php?page=1&id=2&category=olahraga&alg=3 Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:07:13] E_NOTICE ::1 /recommender/dislike.php?page=1&id=5&category=otomotif&alg=3 Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:07:17] E_NOTICE ::1 /recommender/dislike.php?page=1&id=8&category=teknologi&alg=3 Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:08:16] E_NOTICE ::1 /recommender/dislike.php?page=1&id=1&category=bisnis&alg=3 Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:14:17] E_NOTICE ::1 /recommender/dislike.php?page=1&id=44&category=bisnis&alg=3 Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:15:29] E_NOTICE ::1 /recommender/dislike.php?page=1&id=3&category=bisnis&alg=3 Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:15:34] E_NOTICE ::1 /recommender/like.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 174
+[2018/02/25 21:15:38] E_NOTICE ::1 /recommender/like.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 174
+[2018/02/25 21:15:42] E_NOTICE ::1 /recommender/dislike.php?page=0&id=31&category=olahraga&alg=3 Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 229
+[2018/02/25 21:22:38] E_NOTICE ::1 /recommender/like.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:22:43] E_NOTICE ::1 /recommender/like.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:22:46] E_NOTICE ::1 /recommender/dislike.php?page=0&id=116&category=selebriti&alg=3 Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 242
+[2018/02/25 21:23:55] E_NOTICE ::1 /recommender/like.php Undefined index: otomotif file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:24:09] E_NOTICE ::1 /recommender/dislike.php?page=1&id=2&category=olahraga&alg=3 Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 242
+[2018/02/25 21:24:13] E_NOTICE ::1 /recommender/like.php Undefined index: olahraga file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:24:27] E_NOTICE ::1 /recommender/like.php Undefined index: bisnis file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:24:42] E_NOTICE ::1 /recommender/like.php Undefined index: selebriti file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178
+[2018/02/25 21:24:49] E_NOTICE ::1 /recommender/like.php Undefined index: teknologi file: /opt/lampp/htdocs/recommender/classes/Controller/Bulletin.php line: 178

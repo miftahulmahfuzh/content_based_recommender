@@ -9,28 +9,27 @@ function submit_action_form(action, form_id) {
 </script>
 
 <div id="contents">
-  <?php if ($comments) : ?>
+  <?php if ($articles) : ?>
   <div class="comments">
-    <?php foreach ($comments as $comment) : ?>
+    <?php foreach ($articles as $article) : ?>
       <div class="comment">
         <div class="title">
-          <input type="button" value='<?php echo h($comment['title']) ?>' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$pager->getCurrentPage().'&id='.$comment['id'] ?>';">
+          <input type="button" value='<?php echo h(substr($article['title'],0,67))."..." ?>' onclick="window.location.href='<?php echo get_uri('article.php').'?page='.$pager->getCurrentPage().'&id='.$article['id'] ?>';">
         </div>
         <div class="category">
-          <?php echo "Category : ".h($comment['category'])?>
+          <?php echo "Category : ".h($article['category'])?>
         </div>
         <div class="body">
-          <?php echo nl2br(h(substr($comment['content'],0,150))."...") ?>
+          <?php echo nl2br(h(substr($article['content'],0,150))."...") ?>
         </div>
         <div class="date">
-          <?php echo h($comment['date']) ?>
+          <?php echo h($article['date']) ?>
         </div>
       </div>
     <?php endforeach ?>
+    <input type="button" value='REFRESH RECOMMENDATION' onclick="window.location.href='<?php echo get_uri('index.php').'?status=r' ?>';">
   </div>
   <?php endif ?>
-
-  <?php include(HTML_FILES_DIR . '/common/pager.php') ?>
 </div>
 
 <?php include(HTML_FILES_DIR . '/common/footer.php') ?>

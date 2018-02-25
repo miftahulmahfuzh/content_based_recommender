@@ -187,22 +187,29 @@ class Controller_User extends Controller_Application
     $preference = new Storage_Preference();
 
     $userid = $this->getLoggedInId();
-    $dataPrefs = $preference->fetch(null, 'id = '.$userid);
+    $dataPrefsTmp = $preference->fetch(null, 'id = '.$userid);
 
-    if (empty($dataPrefs)) {
+    if (empty($dataPrefsTmp)) {
       $this->err404();
     }
 
-    unset($dataPrefs[0]['id']);
+    $dataPrefs = $dataPrefsTmp[0];
+    unset($dataPrefs['id']);
 
-    $categories = $this->session->get('categories');
+    $lCategories = $this->session->get('l_categories');
+    $hCategories = $this->session->get('h_categories');
     $dataPref = array();
 
-    foreach ($dataPrefs[0] as $key => $val) {
-      if (!empty($categories[$key])) {
-        $val += $categories[$key] / array_sum($categories);
-        $dataPref[$key] = $val;
+    foreach ($dataPrefs as $key => $val) {
+      if (!empty($lCategories[$key])) {
+        $val += $lCategories[$key] / array_sum($lCategories);
       } 
+
+      if (!empty($hCategories[$key]) && $val > 1) {
+        $val -= $hCategories[$key] / array_sum($hCategories);
+      } 
+
+      $dataPref[$key] = $val;
     }
 
     if (!empty($dataPref)) {

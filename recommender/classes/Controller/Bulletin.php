@@ -24,36 +24,86 @@ class Controller_Bulletin extends Controller_Application
     $preference = new Storage_Preference();
     
     $pager = $this->createPager($bulletin->getCount());
-
-    $page = $this->getParam('page');
-
-    if ($page && !$pager->isValidPageNumber($page)) {
-      $this->err404();
-    }
     
-    $pager->setCurrentPage($page);
-    
-    $userPrefs = $preference->fetch(null, 'id = '.$userid);
-    $userPrefq = null;
+    $status = $this->getParam('status');
 
-    if (!empty($userPrefs)) {
-      unset($userPrefs[0]['id']);
-      arsort($userPrefs[0]);
-      $userPrefq = "FIELD(category,'".implode("','", array_keys($userPrefs[0]))."')";
+    $userPrefsTmp = $preference->fetch(null, 'id = '.$userid);
+    $articles = array();
+
+    if (!empty($userPrefsTmp)) {
+      $userPrefs = $userPrefsTmp[0];
+      unset($userPrefs['id']);
+      arsort($userPrefs);
+
+      # Get value of variable A for each category
+      $prefsA = array(); 
+      foreach (array_keys($userPrefs) as $category) {
+        $prefsA[$category] = $userPrefs[$category] / array_sum($userPrefs); 
+        $prefsA[$category] *= $pager->getItemsPerPage();
+      }
+      $this->session->set('prefs_A', $prefsA);
+
+      $liked = $this->session->get('liked');
+      $likedId = null;
+
+      if (!empty($liked)) {
+        $likedId = 'id != ' . implode(" AND id != ", $liked); 
+      }
+
+      $disliked = $this->session->get('disliked');
+      $dislikedId = null;
+
+      if (!empty($disliked)) {
+        $dislikedId = 'id != ' . implode(" AND id != ", $disliked); 
+      }
+
+      $allIdShowed = $this->session->get('all_id_showed');
+      $showedId = null;
+
+      if (!empty($allIdShowed)) {
+        $showedId = 'id != ' . implode(" AND id != ", $allIdShowed); 
+      }
+
+      # Fetch articles for each category
+      foreach (array_keys($userPrefs) as $category) {
+        $categoryQ = "category='" . $category . "'";
+
+        if (!empty($likedId)) {
+          $categoryQ = $likedId . " AND " . $categoryQ;
+        } 
+
+        if (!empty($dislikedId)) {
+          $categoryQ = $dislikedId . " AND " . $categoryQ;
+        } 
+
+        if (!empty($showedId)) {
+          $categoryQ = $showedId . " AND " . $categoryQ;
+        } 
+
+        $articlesTmp = $bulletin->fetch(null, $categoryQ, null, null, round($prefsA[$category]));
+        $articles = array_merge($articles, $articlesTmp);
+      } 
+
+      # save fetched articles id in session
+      $currentIdShowed = array();
+      foreach ($articles as $article) {
+        array_push($currentIdShowed, $article['id']);
+      }
+
+      $this->session->set('current_id_showed', $currentIdShowed);
+
+      # update all showed article for refresh recommendation
+      $allIdShowed = $this->session->get('all_id_showed');
+      if (empty($allIdShowed)) {
+        $allIdShowed = $currentIdShowed;
+      }
+
+      $status = $this->getParam('status');
+      if ($status == 'r') { 
+        $allIdShowed = array_unique(array_merge($allIdShowed, $currentIdShowed), SORT_REGULAR);
+        $this->session->set('all_id_showed', $allIdShowed);
+      }
     }
-
-    $liked = $this->session->get('liked');
-    $likedId = null;
-
-    if (!empty($liked)) {
-      $likedId = 'id != ' . implode(" AND id != ", $liked); 
-    }
-
-    $comments = $bulletin->fetch(
-      null, $likedId, $userPrefq,
-      $pager->getOffset(),
-      $pager->getItemsPerPage()
-    );
 
     $this->render('bulletin/index.php', get_defined_vars());
   }
@@ -109,25 +159,28 @@ class Controller_Bulletin extends Controller_Application
       $this->err400();
     }
 
-    $page = $this->getParam('page');
     $id = $this->getParam('id');
 
     if (empty($id)) {
       $this->err404();
     }
 
-    if (empty($page)) {
-      $page = 0;
+    $category = $this->getParam('category');
+    $session = $this->session->get('l_categories');
+    if ($session == null) {
+      $session = array();
     }
 
-    $category = $this->getParam('category');
-    $session = $this->session->get('categories');
     $isliked = false;
 
     if (!empty($category)) {
       # count all liked category for re-weighting preference 
+      if ($session[$category] == null) {
+        $session[$category] = 0;
+      }
+
       $session[$category]++;
-      $this->session->set('categories', $session);
+      $this->session->set('l_categories', $session);
 
       # save article id so it won't be showed anymore during session
       $sessionLiked = $this->session->get('liked');
@@ -138,7 +191,7 @@ class Controller_Bulletin extends Controller_Application
         $sessionLiked[] = $id;
       }
 
-      $this->session->set('liked', $sessionLiked);
+      $this->session->set('liked', array_unique($sessionLiked, SORT_REGULAR));
       unset($sessionLiked); 
 
       # set isliked to TRUE so "do you like it?" question won't be showed anymore
@@ -170,28 +223,43 @@ class Controller_Bulletin extends Controller_Application
       $this->err400();
     }
 
-    $page = $this->getParam('page');
     $id = $this->getParam('id');
-    $alg = $this->getParam('alg');
 
     if (empty($id)) {
       $this->err404();
     }
 
-    if (empty($page)) {
-      $page = 0;
+    $category = $this->getParam('category');
+    $session = $this->session->get('h_categories');
+    if ($session == null) {
+      $session = array();
     }
 
-    $sessionDisliked = $this->session->get('disliked');
+    $isliked = false;
 
-    if (empty($sessionUnliked)) {
-      $sessionDisliked = array($id);
-    } else {
-      $sessionDisliked[] = $id;
+    if (!empty($category)) {
+      # count all liked category for re-weighting preference 
+      if ($session[$category] == null) {
+        $session[$category] = 0;
+      }
+
+      $session[$category]++;
+      $this->session->set('h_categories', $session);
+
+      # save article id so it won't be showed anymore during session
+      $sessionDisliked = $this->session->get('disliked');
+
+      if (empty($sessionDisliked)) {
+        $sessionDisliked = array($id);
+      } else {
+        $sessionDisliked[] = $id;
+      }
+
+      $this->session->set('disliked', array_unique($sessionDisliked, SORT_REGULAR));
     }
-
-    $this->session->set('disliked', $sessionDisliked);
   
+    $alg = $this->getParam('alg');
+
     if (!empty($alg)) {
       $accuration = new Storage_Accuration($alg);
 

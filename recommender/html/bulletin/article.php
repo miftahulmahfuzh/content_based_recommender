@@ -25,13 +25,12 @@
         <?php if ($this->getLoggedInId()) : ?>
           <div id="rate">Apakah anda menyukai artikel ini?</div>
           <form class="default" action="<?php echo get_uri('like.php') ?>" method="post">
-            <input type="hidden" name="page" value="<?php echo $page ?>" />
             <input type="hidden" name="alg" value="<?php echo $alg ?>" />
             <input type="hidden" name="id" value="<?php echo $article[0]['id'] ?>" />
             <input type="hidden" name="category" value="<?php echo $article[0]['category'] ?>" />
             <div class="submit">
               <input type="submit" value="YA" />
-              <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('dislike.php').'?page='.$page.'&id='.$article[0]['id'].'&alg='.$alg?>';">
+              <input type="button" value='TIDAK' onclick="window.location.href='<?php echo get_uri('dislike.php').'?page='.$page.'&id='.$article[0]['id'].'&category='.$article[0]['category'].'&alg='.$alg?>';">
             </div>
           </form>
         <?php endif ?>
